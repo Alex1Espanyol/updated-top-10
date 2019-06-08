@@ -1,0 +1,40 @@
+<html>
+    <style>
+        h1{
+            font-family: fantasy;
+            color:salmon
+        }
+    </style>
+    <h1>TOP 10 Countries by Population</h1>
+    <img src="flagChina.png"width="150" height="100">
+    <img src="flagIndia.png"width="150" height="100">
+    <img src="flagAmerica.jpg"width="150" height="100">
+    <img src="flagIndonesia.jpg"width="150" height="100"> 
+    <img src="flagBrazil.jpg"width="150" height="100">
+    <img src="flagPakistan.jpg"width="150" height="100">
+    <img src="flagNigeria.jpg"width="150" height="100">
+    <img src="flagBangladesh.jpg"width="150" height="100">
+    <img src="flagRussia.jpg"width="150" height="100">
+    <img src="flagMexico.jpg"width="150" height="100">
+    <canvas id="mycanvas" width="3000" height="1200"></canvas>
+    <script src="countries.js"></script>
+    <script>
+        var c = document.getElementById('mycanvas');
+        var ctx = c.getContext('2d');
+        data.sort(function(a, b){
+            return a.population - b.population;
+        })
+        data.reverse();
+        var y = 0
+        for (i =0;i<10; i++) {
+            ctx.fillStyle = "gold";
+            ctx.fillRect(0,y,data[i].population/250000,50);
+            ctx.fillStyle="black";
+            ctx.font="30px Arial";
+            ctx.fillText(data[i].country,10,y+35);
+            ctx.fillText(data[i].population,280,y+35);
+            y=y+55;
+        }
+    </script>
+    <img src="flagIndia.png">
+</html>
